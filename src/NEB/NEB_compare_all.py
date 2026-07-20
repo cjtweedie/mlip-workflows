@@ -647,6 +647,15 @@ def main(argv: list[str] | None = None, *, repo_root: Path | None = None) -> int
         (rankings_dir / "rankings.txt").write_text("".join(lines), encoding="utf-8")
 
         print(f"Wrote rankings to {rankings_dir / 'rankings.txt'}")
+        
+        
+        # CONNOR ADDITION: 
+        # print MLIP, DFT image energies & errors to txt output for quick reference
+        # so don't need to use benchmark script (can't use if only checking one model)
+        image_list = np.arange(len(mlip_s))
+        s_diff = np.subtract(dft_s,mlip_s)
+        e_diff = np.subtract(dft_e,mlip_e)
+        np.savetxt(f"{plot_dir}/mep_compare.txt", np.transpose([image_list, dft_s, mlip_s, s_diff, dft_e, mlip_e, e_diff]), fmt=['%d', '%f', '%f', '%f', '%f', '%f', '%f'], delimiter=' ')
 
     return 0
 

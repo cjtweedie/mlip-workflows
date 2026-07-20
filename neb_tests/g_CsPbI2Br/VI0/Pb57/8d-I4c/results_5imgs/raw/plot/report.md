@@ -11,12 +11,12 @@
 - **Mlip_d3 dt**: 1.0
 - **mlip_d3 climb dt**: 0.9736842105263158
 - **Total NEB time (s)**: 128.0
-- **max_F_perp_eV_per_A**: 0.11623706125449575
+- **max_F_perp_eV_per_A**: None
 - **force_RMSE_eV_per_A**: None
 - **max_force_err_eV_per_A**: None
 - **model**: mace_neutral_charge_ft_mh_09_07_26
 - **raw_dir**: /home/uqctwee1/PhD_wsl/projects/mlip/mlip-workflows/neb_tests/g_CsPbI2Br/VI0/Pb57/8d-I4c/results_5imgs/raw
-- **dft_neb_dat**: /home/uqctwee1/PhD_wsl/projects/mlip/mlip-workflows/neb_tests/g_CsPbI2Br/VI0/Pb57/8d-I4c/dft_neb.dat
+- **dft_neb_dat**: /home/uqctwee1/PhD_wsl/projects/mlip/mlip-workflows/neb_tests/g_CsPbI2Br/VI0/Pb57/8d-I4c/neb.dat
 
 ## Plot
 
