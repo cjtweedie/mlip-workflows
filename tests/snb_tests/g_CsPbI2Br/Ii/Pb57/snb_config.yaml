@@ -1,0 +1,29 @@
+# Example config.yaml file for snb-generate
+
+# General/Distortion section
+#oxidation_states:  # If not specified, the code will determine them
+
+distortion_increment: 0.2  # Bond distortion increment
+bond_distortions: [-0.4,-0.2,0,0.2,0.4] # Explicit list of bond distortions
+#distorted_elements:  # (Default = None, distorts nearest neighbours)
+    #vac_Cd_1:
+        #Cd  # Distort Cd atoms near the Cd interstitial
+
+# Rattle section
+stdev: 0.32 # Rattle standard deviation (Default = 10% of auto-determined bulk bond length)
+d_min: 2.5  # Displacements that place atoms closer than d_min are penalised. (Default = 80% of auto-determined bulk bond length)
+
+#active_atoms: None  # Atoms to apply rattle displacement to. (Default = all atoms)
+max_attempts: 5000  # Limit for how many attempted rattle moves are allowed a single atom; if this limit is reached an `Exception` is raised
+max_disp: 2.0  # Rattle moves that yields a displacement larger than max_disp will always be rejected. Rarely occurs, mostly used as a safety net
+local_rattle: False  # If True, rattle displacements will tail-off as we more away from the defect site. Not recommended as typically worsens performance.
+seed: 42  # Seed from which rattle random displacements are generated (Default = 100*distortion_factor, e.g. 40 for -60% distortion, 100 for 0% Distortion/Rattled etc)
+
+# Code specific section
+# For VASP, we can specify POTCARs like this:
+POTCAR_FUNCTIONAL: PBE  # (Default = PBE)
+POTCAR:
+  Cs: Cs_sv  # Element matching its POTCAR symbol
+  Pb: Pb
+  I: I
+  Br: Br

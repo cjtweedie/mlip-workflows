@@ -180,6 +180,7 @@ model_build: Dict[str, Callable[[Path, str, str], Any]] = {
     "mace-mpa-0-medium": _mace_builder("mace-mpa-0-medium"),
     "mace-matpes-pbe-omat-ft": _mace_builder("MACE-matpes-pbe-omat-ft"),
     "mace-matpes-r2scan-omat-ft": _mace_builder("MACE-matpes-r2scan-omat-ft"),
+    "mace_neutral_charge_ft_mh_09_07_26": _mace_builder("mace_neutral_charge_ft_mh_09_07_26"),
     
     "ivac0_neb_ft_1": _mace_builder("ivac0_neb_ft_1"),
     "ivac0_neb_ft_compiled_1": _mace_builder("ivac0_neb_ft_compiled_1"),
