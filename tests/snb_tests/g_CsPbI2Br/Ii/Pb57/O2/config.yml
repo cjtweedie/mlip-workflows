@@ -6,9 +6,30 @@ defaults:
   # Where the model files live.
   models_root: ~/PhD_wsl/projects/mlip/mlip-workflows/assets/models/mace/
   # Use either bulk/defect inputs or an existing snb_dir.
-  bulk: relaxed_SQS.vasp
-  defect: I_int.vasp
-  snb_dir: null
+  bulk: ./relaxed_SQS.vasp
+  defect: ./I_int.vasp
+  #snb_dir: null
+  # Oxidation states are required when generating candidates from POSCARs.
+  oxidation_states:
+    Cs: 1
+    Pb: 2
+    I: -1
+    Br: -1
+  # Overwrite previous outputs.
+  #overwrite: true
+  # Optional DFT input folder.
+  vasp_inputs_dir: ./vasp_inputs
+  # Prepare DFT folders after selection.
+  prepare_dft: true
+  # Copy POTCAR instead of symlinking it.
+  copy_potcar: false
+  # Use the dispersion-corrected calculator path when supported.
+  include_vdw: true
+  # Overwrite previous outputs.
+  overwrite: true
+  # Calculator device and dtype.
+  device: cuda
+  dtype: float32
 snb:
   defaults:
     # Model name registered in SUPPORTED_MODELS.yml.
@@ -18,28 +39,28 @@ snb:
     # Where the model files live.
     #models_root: ~/PhD_wsl/projects/mlip/mlip-workflows/assets/models/mace/
     # Use either bulk/defect inputs or an existing snb_dir.
-    #bulk: relaxed_SQS.vasp
-    #defect: I_int.vasp
-    #snb_dir: null
-    # Oxidation states are required when generating candidates from POSCARs.
+    bulk: ./relaxed_SQS
+    defect: ./I_int
+    snb_dir: null
+     Oxidation states are required when generating candidates from POSCARs.
     oxidation_states:
       Cs: 1
       Pb: 2
       I: -1
       Br: -1
     # Optional DFT input folder.
-    vasp_inputs_dir: ./vasp_inputs
+    #vasp_inputs_dir: ./vasp_inputs
     # Prepare DFT folders after selection.
-    prepare_dft: true
+    #prepare_dft: true
     # Copy POTCAR instead of symlinking it.
-    copy_potcar: false
+    #copy_potcar: false
     # Use the dispersion-corrected calculator path when supported.
-    include_vdw: true
+    #include_vdw: true
     # Overwrite previous outputs.
     overwrite: true
     # Calculator device and dtype.
-    device: cuda
-    dtype: float32
+    #device: cuda
+    #dtype: float32
 
   settings:
     # MLIP relaxation force threshold.

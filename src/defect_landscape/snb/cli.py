@@ -118,8 +118,8 @@ def build_parser(config: SnbConfig) -> argparse.ArgumentParser:
 
     generate = subparsers.add_parser("generate", help="Generate ShakeNBreak distorted structures.")
     _add_shared_flags(generate)
-    generate.add_argument("--bulk", type=Path, required=True)
-    generate.add_argument("--defect", type=Path, required=True)
+    generate.add_argument("--bulk", type=Path, required=False)
+    generate.add_argument("--defect", type=Path, required=False)
     generate.add_argument("--case-name", help="Optional output label. Defaults to the defect POSCAR parent folder.")
     generate.add_argument("--oxidation-states", nargs="+", help="Oxidation states as Element=value. Defaults to snb.defaults.oxidation_states.")
 
