@@ -82,7 +82,7 @@ def main(argv: list[str] | None = None, *, repo_root: Path | None = None) -> int
     cfg_poscar_i = resolve_path(run_root, neb_defaults_cfg.get("poscar_i"))
     cfg_poscar_f = resolve_path(run_root, neb_defaults_cfg.get("poscar_f"))
     if cfg_poscar_i is None or cfg_poscar_f is None:
-        raise ValueError("config.yml must define neb.defaults.poscar_i and neb.defaults.poscar_f.")
+        raise ValueError("config.yml must define neb.defaults.poscar_i and neb.defaults.poscar_f")
 
     args = _parse_args(argv)
 
@@ -92,7 +92,7 @@ def main(argv: list[str] | None = None, *, repo_root: Path | None = None) -> int
 
     poscar_i = args.poscar_i or cfg_poscar_i
     poscar_f = args.poscar_f or cfg_poscar_f
-    out_poscar_f = poscar_f.parent / "remapped_POSCAR_f.vasp"
+    out_poscar_f = poscar_f.parent / "remapped_POSCAR_f"
 
     a = read(poscar_i)
     b = read(poscar_f)
